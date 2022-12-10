@@ -6,8 +6,16 @@
 
   <groupId>me.defaultybuf.simplechatenhancement</groupId>
   <artifactId>SimpleChatEnhancement</artifactId>
+  <developers>
+    <developer>
+      <id>DefaultyBuf</id>
+      <name>Alex Dele</name>
+      <timezone>EST</timezone>
+    </developer>
+  </developers>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
+
   <name>SimpleChatEnhancement</name>
 
   <properties>
@@ -17,16 +25,28 @@
 
    <repositories>
       <repository>
-        <id>papermc</id>
-        <url>https://repo.papermc.io/repository/maven-public/</url>
+        <id>spigotmc-repo</id>
+        <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+      </repository>
+
+      <repository>
+        <id>placeholderapi</id>
+        <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
       </repository>
   </repositories>
 
   <dependencies>
     <dependency>
-      <groupId>io.papermc.paper</groupId>
-      <artifactId>paper-api</artifactId>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
       <version>1.19.2-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>me.clip</groupId>
+      <artifactId>placeholderapi</artifactId>
+      <version>2.11.2</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -45,21 +65,21 @@
 
     <pluginManagement>
       <plugins>
+       <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.2.0</version>
+          <configuration>
+            <outputDirectory>C:/Users/TheAncientOwl/mc-owls-valley/plugins</outputDirectory>
+          </configuration>
+        </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.1</version>
           <configuration>
             <release>17</release>
-          </configuration>
-        </plugin>
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>2.3.1</version>
-          <configuration>
-            <outputDirectory>C:/Users/TheAncientOwl/mc-owls-valley/plugins</outputDirectory>
           </configuration>
         </plugin>
       </plugins>
