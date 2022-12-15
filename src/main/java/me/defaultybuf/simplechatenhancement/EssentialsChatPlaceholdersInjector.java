@@ -12,7 +12,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.md_5.bungee.api.ChatColor;
 
-public class ChatListener implements Listener {
+public class EssentialsChatPlaceholdersInjector implements Listener {
   private static final Pattern pattern = Pattern.compile("&#[a-fA-F0-9]{6}");
 
   @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)

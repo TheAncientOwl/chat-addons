@@ -17,7 +17,7 @@ public class Main extends JavaPlugin {
             return;
         }
 
-        Bukkit.getServer().getPluginManager().registerEvents(new ChatListener(), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new EssentialsChatPlaceholdersInjector(), this);
 
         Bukkit.getServer().getLogger().log(Level.INFO,
                 ChatColor.translateAlternateColorCodes('&', "&aSimpleChatEnhancement enabled!"));
