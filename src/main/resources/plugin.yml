@@ -2,3 +2,14 @@ main: me.defaultybuf.simplechatenhancement.Main
 name: SimpleChatEnhancement
 version: 1.0
 api-version: 1.19
+softdepend: [PlaceholderAPI]
+
+commands:
+  sce:
+    description: reloads the plugin
+    permission: sce.reload
+
+permissions:
+  sce.reload:
+    description: allows sce command
+    default: op

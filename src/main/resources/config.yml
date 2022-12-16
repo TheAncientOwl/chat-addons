@@ -1,0 +1,12 @@
+bracket-placeholders-injector:
+  enabled: true
+
+chat-hover:
+  enabled: true
+  format:
+    - '&a%player_name%'
+    - '&7world: %player_world%'
+    - ''
+    - '&7Click to send %player_name% a message!'
+  click-action:
+    - '/msg %player_name% '
