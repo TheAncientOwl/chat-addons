@@ -36,7 +36,7 @@ public class ChatHover implements Listener {
     for (int i = 0; i < hoverLines.size(); i++)
       hoverLines.set(i, ChatUtils.setPlaceholdersColor(player, hoverLines.get(i)));
     final HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT,
-        new Text(String.join("\n", hoverLines)));
+        new Text(TextComponent.fromLegacyText(String.join("\n", hoverLines))));
 
     // create click event
     final String clickAction = m_Plugin.getConfig().getString("chat-hover.click-action");
