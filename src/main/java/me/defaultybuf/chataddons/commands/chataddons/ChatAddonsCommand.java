@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
 import me.defaultybuf.chataddons.commands.BasePluginCommand;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public class ChatAddonsCommand implements CommandExecutor {
   private final HashMap<String, BasePluginCommand> m_Commands;
@@ -43,7 +43,7 @@ public class ChatAddonsCommand implements CommandExecutor {
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     if (!sender.hasPermission("chataddons.use")) {
-      ChatUtils.sendNoPermissionMessage(sender, m_Plugin.getPluginConfig());
+      Utils.sendNoPermissionMessage(sender, m_Plugin.getPluginConfig());
       return true;
     }
 
@@ -53,7 +53,7 @@ public class ChatAddonsCommand implements CommandExecutor {
     BasePluginCommand cmd = m_Commands.get(args[0].toLowerCase());
 
     if (cmd == null) {
-      ChatUtils.sendMessageColor(sender, m_Plugin.getPluginConfig().getString(Config.MESSAGES, "unknown-command"));
+      Utils.sendMessageColor(sender, m_Plugin.getPluginConfig().getString(Config.MESSAGES, "unknown-command"));
       return true;
     }
 

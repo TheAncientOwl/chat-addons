@@ -11,7 +11,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
@@ -40,7 +40,7 @@ public class ChatHoverListener implements Listener {
     // create hover event
     List<String> hoverLines = m_Plugin.getPluginConfig().getStringList(Config.CHAT_HOVER, "format");
     for (int i = 0; i < hoverLines.size(); i++)
-      hoverLines.set(i, ChatUtils.setPlaceholdersColor(player, hoverLines.get(i)));
+      hoverLines.set(i, Utils.setPlaceholdersColor(player, hoverLines.get(i)));
     final HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT,
         new Text(TextComponent.fromLegacyText(String.join("\n", hoverLines))));
 

@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import me.defaultybuf.chataddons.Config;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public class StaffChatListener implements Listener {
   private HashSet<Player> m_Staff;
@@ -54,7 +54,7 @@ public class StaffChatListener implements Listener {
         || !message.startsWith(m_Config.getString(Config.STAFF_CHAT, "char")))
       return;
 
-    final String staffMessage = ChatUtils.colorize(m_Config.getString(Config.STAFF_CHAT, "format")
+    final String staffMessage = Utils.colorize(m_Config.getString(Config.STAFF_CHAT, "format")
         .replace("{name}", player.getDisplayName())
         .replace("{message}", message.substring(1, message.length())));
 

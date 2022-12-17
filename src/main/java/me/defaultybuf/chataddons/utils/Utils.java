@@ -10,7 +10,7 @@ import me.clip.placeholderapi.PlaceholderAPI;
 import me.defaultybuf.chataddons.Config;
 import net.md_5.bungee.api.ChatColor;
 
-public class ChatUtils {
+public class Utils {
   private static final Pattern RGB_PATTERN = Pattern.compile("&#[a-fA-F0-9]{6}");
 
   public static String colorize(String str) {

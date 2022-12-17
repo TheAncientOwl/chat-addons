@@ -8,7 +8,7 @@ import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
 import me.defaultybuf.chataddons.commands.BasePluginCommand;
 import me.defaultybuf.chataddons.listeners.LockChatListener;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public class UnlockChat extends BasePluginCommand {
 
@@ -19,7 +19,7 @@ public class UnlockChat extends BasePluginCommand {
   @Override
   public boolean execute(CommandSender sender, String[] args) {
     if (!LockChatListener.isLocked()) {
-      ChatUtils.sendMessageColor(sender,
+      Utils.sendMessageColor(sender,
           m_Config.getPrefix() + m_Config.getString(Config.LOCK_CHAT, "already.unlocked"));
       return true;
     }
@@ -29,7 +29,7 @@ public class UnlockChat extends BasePluginCommand {
     String unlockedNotify = m_Config.getString(Config.LOCK_CHAT, "notify.unlocked").replace("{name}", sender.getName());
     for (Player player : Bukkit.getOnlinePlayers())
       if (player.hasPermission("chataddons.lockchat.notify"))
-        ChatUtils.sendMessageColor(player, unlockedNotify);
+        Utils.sendMessageColor(player, unlockedNotify);
 
     return true;
   }

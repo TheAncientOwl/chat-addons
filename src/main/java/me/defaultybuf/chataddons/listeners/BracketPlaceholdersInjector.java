@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.clip.placeholderapi.PlaceholderAPI;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public class BracketPlaceholdersInjector implements Listener {
 
@@ -21,11 +21,11 @@ public class BracketPlaceholdersInjector implements Listener {
     final String format = e.getFormat();
 
     if (PlaceholderAPI.containsBracketPlaceholders(message)) {
-      e.setMessage(ChatUtils.setBracketPlaceholdersColor(player, message));
+      e.setMessage(Utils.setBracketPlaceholdersColor(player, message));
     }
 
     if (PlaceholderAPI.containsBracketPlaceholders(format)) {
-      e.setFormat(ChatUtils.setBracketPlaceholdersColor(player, format));
+      e.setFormat(Utils.setBracketPlaceholdersColor(player, format));
     }
   }
 }

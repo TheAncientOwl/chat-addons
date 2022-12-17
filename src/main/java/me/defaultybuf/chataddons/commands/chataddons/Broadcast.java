@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
 import me.defaultybuf.chataddons.commands.BasePluginCommand;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public class Broadcast extends BasePluginCommand {
 
@@ -23,7 +23,7 @@ public class Broadcast extends BasePluginCommand {
     for (int i = 1; i < args.length; i++)
       sb.append(args[i]).append(' ');
 
-    final String message = ChatUtils
+    final String message = Utils
         .colorize(m_Config.getString(Config.BROADCAST, "format").replace("{message}", sb.toString()));
 
     Bukkit.broadcast(message, "chataddons.broadcast.receive");

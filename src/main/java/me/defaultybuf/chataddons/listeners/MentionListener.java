@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.defaultybuf.chataddons.Config;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public class MentionListener implements Listener {
   private Config m_Config;
@@ -25,7 +25,7 @@ public class MentionListener implements Listener {
     if (!player.hasPermission("chataddons.mention"))
       return;
 
-    final String notification = ChatUtils.colorize(m_Config.getString(Config.MENTION, "format").replace("{name}",
+    final String notification = Utils.colorize(m_Config.getString(Config.MENTION, "format").replace("{name}",
         player.getDisplayName()));
     final Sound sound = Sound.valueOf(m_Config.getString(Config.MENTION, "sound"));
     final int volume = m_Config.getInt(Config.MENTION, "volume");

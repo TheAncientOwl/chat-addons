@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public abstract class BasePluginCommand implements CommandExecutor, IPluginCommand {
   protected final Config m_Config;
@@ -20,7 +20,7 @@ public abstract class BasePluginCommand implements CommandExecutor, IPluginComma
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     if (!sender.hasPermission(m_Permission)) {
-      ChatUtils.sendNoPermissionMessage(sender, m_Config);
+      Utils.sendNoPermissionMessage(sender, m_Config);
       return true;
     }
 

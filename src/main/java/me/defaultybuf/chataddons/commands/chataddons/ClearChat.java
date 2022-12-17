@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
 import me.defaultybuf.chataddons.commands.BasePluginCommand;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public class ClearChat extends BasePluginCommand {
 
@@ -24,7 +24,7 @@ public class ClearChat extends BasePluginCommand {
         clearChat(player, clearChatAmount);
 
       if (player.hasPermission("chataddons.clearchat.notify"))
-        ChatUtils.sendMessageColor(player,
+        Utils.sendMessageColor(player,
             m_Config.getString(Config.CLEAR_CHAT, "notify").replace("{name}", sender.getName()));
     }
 

@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.defaultybuf.chataddons.Config;
-import me.defaultybuf.chataddons.utils.ChatUtils;
+import me.defaultybuf.chataddons.utils.Utils;
 
 public class LockChatListener implements Listener {
   private static volatile boolean m_IsChatLocked;
@@ -25,7 +25,7 @@ public class LockChatListener implements Listener {
 
     if (m_IsChatLocked && !player.hasPermission("chataddons.lockchat.bypass")) {
       e.setCancelled(true);
-      ChatUtils.sendMessageColor(player, m_Config.getString(Config.LOCK_CHAT, "deny"));
+      Utils.sendMessageColor(player, m_Config.getString(Config.LOCK_CHAT, "deny"));
     }
   }
 
