@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.defaultybuf.chataddons.commands.chataddons.ChatAddonsCommand;
+import me.defaultybuf.chataddons.commands.ChatAddonsCommand;
 import me.defaultybuf.chataddons.listeners.BracketPlaceholdersInjector;
 import me.defaultybuf.chataddons.listeners.ChatHoverListener;
 import me.defaultybuf.chataddons.listeners.LockChatListener;

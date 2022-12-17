@@ -1,4 +1,4 @@
-package me.defaultybuf.chataddons.commands;
+package me.defaultybuf.chataddons.commands.api;
 
 import org.bukkit.command.CommandSender;
 

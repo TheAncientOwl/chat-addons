@@ -1,4 +1,4 @@
-package me.defaultybuf.chataddons.commands.chataddons;
+package me.defaultybuf.chataddons.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.commands.BasePluginCommand;
+import me.defaultybuf.chataddons.commands.api.BasePluginCommand;
 import me.defaultybuf.chataddons.utils.Utils;
 
 public class ClearChat extends BasePluginCommand {

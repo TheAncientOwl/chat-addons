@@ -3,6 +3,7 @@ package me.defaultybuf.chataddons.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -47,5 +48,9 @@ public class Utils {
 
   public static String setPlaceholdersColor(Player player, String str) {
     return colorize(PlaceholderAPI.setPlaceholders(player, str));
+  }
+
+  public static boolean isPlayer(String str) {
+    return Bukkit.getPlayerExact(str) != null;
   }
 }
