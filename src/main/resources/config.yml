@@ -1,16 +1,16 @@
 messages:
-  prefix: '&8(&4&lChatAddons&8)&r '
+  prefix: '&8(&3ChatAddons&8)&r '
   reload: '&aConfig reloaded&8!'
   unknown-command: '&cUnknown command&8.'
   no-permission: "&You don't have the permission to use this command&8!"
   help:
     - ''
-    - '&8&m        &8« &4ChatAddons &eHelp &8»&m        '
-    - '&8/&4ca &chelp&8: &7displays this list'
-    - '&8/&4ca &creload&8: &7reloads the plugin config'
-    - '&8/&4ca &cclearchat&8/&ccc&8: &7clears the chat'
-    - '&8/&4ca &clockchat&8/&clc&8: &7locks the chat'
-    - '&8/&4ca &cunlockchat&8/&cuc&8: &7cunlocks the chat'
+    - '&8&m        &8« &3ChatAddons &eHelp &8»&m        '
+    - '&8/&3ca &bhelp&8: &7displays this list'
+    - '&8/&3ca &breload&8: &7reloads the plugin config'
+    - '&8/&3ca &bclearchat &8| &bcc&8: &7clears the chat'
+    - '&8/&3ca &blockchat &8| &blc&8: &7locks the chat'
+    - '&8/&3ca &bunlockchat &8| &buc&8: &7cunlocks the chat'
 
 bracket-placeholders-injector:
   enabled: true
