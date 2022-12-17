@@ -11,6 +11,7 @@ messages:
     - '&8/&3ca &bclearchat &8| &bcc&8: &7clears the chat'
     - '&8/&3ca &blockchat &8| &blc&8: &7locks the chat'
     - '&8/&3ca &bunlockchat &8| &buc&8: &7cunlocks the chat'
+    - '&8@&3message&8: &7sends message in staff chat'
 
 bracket-placeholders-injector:
   enabled: true
@@ -44,3 +45,7 @@ lock-chat:
   already:
     locked: '&7The chat is already locked&8!'
     unlocked: '&7The chat is already unlocked&8!'
+
+staff-chat:
+  char: '@'
+  format: '&3Staff &8&l» &7{name}&8: &b{message}'

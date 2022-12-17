@@ -1,6 +1,6 @@
 main: me.defaultybuf.chataddons.Main
 name: ChatAddons
-version: 1.5.1
+version: 1.6.0
 description: Multiple chat addons
 api-version: 1.19
 author: DefaultyBuf
@@ -22,6 +22,7 @@ permissions:
       chataddons.help: true
       chataddons.clearchat.*: true
       chataddons.lockchat.*: true
+      chataddons.staffchat: true
 
   # -----------------------------------------------------------------
   chataddons.use:
@@ -74,4 +75,9 @@ permissions:
 
   chataddons.lockchat.notify:
     description: notifies who locked the chat
+    default: false
+
+  # -----------------------------------------------------------------
+  chataddons.staffchat:
+    description: allows staffchat
     default: false

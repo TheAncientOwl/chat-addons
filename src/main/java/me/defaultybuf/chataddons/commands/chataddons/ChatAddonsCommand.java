@@ -49,7 +49,7 @@ public class ChatAddonsCommand implements CommandExecutor {
     BasePluginCommand cmd = m_Commands.get(args[0].toLowerCase());
 
     if (cmd == null) {
-      ChatUtils.sendMessage(sender, m_Plugin.getPluginConfig().getString(Config.MESSAGES, "unknown-command"));
+      ChatUtils.sendMessageColor(sender, m_Plugin.getPluginConfig().getString(Config.MESSAGES, "unknown-command"));
       return true;
     }
 

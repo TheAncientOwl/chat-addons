@@ -24,7 +24,7 @@ public class ClearChat extends BasePluginCommand {
         clearChat(player, clearChatAmount);
 
       if (player.hasPermission("chataddons.clearchat.notify"))
-        ChatUtils.sendMessage(player,
+        ChatUtils.sendMessageColor(player,
             m_Config.getString(Config.CLEAR_CHAT, "notify").replace("{name}", sender.getName()));
     }
 

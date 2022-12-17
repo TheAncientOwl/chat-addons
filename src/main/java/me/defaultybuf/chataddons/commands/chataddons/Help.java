@@ -19,7 +19,7 @@ public class Help extends BasePluginCommand {
   public boolean execute(CommandSender sender, String args[]) {
     List<String> help = m_Config.getStringList(Config.MESSAGES, "help");
     for (String helpLine : help)
-      ChatUtils.sendMessage(sender, helpLine);
+      ChatUtils.sendMessageColor(sender, helpLine);
 
     return true;
   }

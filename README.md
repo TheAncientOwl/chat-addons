@@ -6,3 +6,4 @@ Changelogs:
 - 1.4.0: clear chat
 - 1.5.0: lock chat
 - 1.5.1: code refactoring
+- 1.6.0: staff chat

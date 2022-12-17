@@ -19,7 +19,8 @@ public class UnlockChat extends BasePluginCommand {
   @Override
   public boolean execute(CommandSender sender, String[] args) {
     if (!LockChatListener.isLocked()) {
-      ChatUtils.sendMessage(sender, m_Config.getPrefix() + m_Config.getString(Config.LOCK_CHAT, "already.unlocked"));
+      ChatUtils.sendMessageColor(sender,
+          m_Config.getPrefix() + m_Config.getString(Config.LOCK_CHAT, "already.unlocked"));
       return true;
     }
 
@@ -28,7 +29,7 @@ public class UnlockChat extends BasePluginCommand {
     String unlockedNotify = m_Config.getString(Config.LOCK_CHAT, "notify.unlocked").replace("{name}", sender.getName());
     for (Player player : Bukkit.getOnlinePlayers())
       if (player.hasPermission("chataddons.lockchat.notify"))
-        ChatUtils.sendMessage(player, unlockedNotify);
+        ChatUtils.sendMessageColor(player, unlockedNotify);
 
     return true;
   }

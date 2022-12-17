@@ -10,6 +10,7 @@ public class Config {
   public static final String MESSAGES = "messages";
   public static final String CLEAR_CHAT = "clear-chat";
   public static final String LOCK_CHAT = "lock-chat";
+  public static final String STAFF_CHAT = "staff-chat";
 
   private ConfigAccessor m_ConfigAccessor = null;
 

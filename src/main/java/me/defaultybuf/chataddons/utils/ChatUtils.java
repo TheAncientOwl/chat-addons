@@ -29,16 +29,16 @@ public class ChatUtils {
     return str;
   }
 
-  public static void sendMessage(Player player, String message) {
+  public static void sendMessageColor(Player player, String message) {
     player.sendMessage(colorize(message));
   }
 
-  public static void sendMessage(CommandSender sender, String message) {
+  public static void sendMessageColor(CommandSender sender, String message) {
     sender.sendMessage(colorize(message));
   }
 
   public static void sendNoPermissionMessage(CommandSender sender, final Config config) {
-    sendMessage(sender, config.getPrefix() + config.getString(Config.MESSAGES, "no-permission"));
+    sendMessageColor(sender, config.getPrefix() + config.getString(Config.MESSAGES, "no-permission"));
   }
 
   public static String setBracketPlaceholdersColor(Player player, String str) {

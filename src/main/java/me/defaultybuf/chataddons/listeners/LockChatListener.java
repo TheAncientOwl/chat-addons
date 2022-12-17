@@ -25,7 +25,7 @@ public class LockChatListener implements Listener {
 
     if (m_IsChatLocked && !player.hasPermission("chataddons.lockchat.bypass")) {
       e.setCancelled(true);
-      ChatUtils.sendMessage(player, m_Config.getString(Config.LOCK_CHAT, "deny"));
+      ChatUtils.sendMessageColor(player, m_Config.getString(Config.LOCK_CHAT, "deny"));
     }
   }
 
