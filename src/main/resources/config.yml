@@ -11,6 +11,7 @@ messages:
     - '&8/&3ca &bclearchat &8| &bcc&8: &7clears the chat'
     - '&8/&3ca &blockchat &8| &blc&8: &7locks the chat'
     - '&8/&3ca &bunlockchat &8| &buc&8: &7cunlocks the chat'
+    - '&8/&3ca &bbroadcast &8| &bbc <message>&8: &7broadcasts a message'
     - '&8@&3message&8: &7sends message in staff chat'
 
 bracket-placeholders-injector:
@@ -58,3 +59,6 @@ mention:
   sound: ENTITY_ARROW_HIT_PLAYER
   volume: 10
   pitch: 1
+
+broadcast:
+  format: '&4&lBroadcast &8&l» &e{message}'

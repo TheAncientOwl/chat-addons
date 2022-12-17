@@ -34,6 +34,10 @@ public class ChatAddonsCommand implements CommandExecutor {
     final UnlockChat unlockChat = new UnlockChat(main, "chataddons.lockchat");
     m_Commands.put("unlockchat", unlockChat);
     m_Commands.put("uc", unlockChat);
+
+    final Broadcast broadcast = new Broadcast(main, "chataddons.broadcast");
+    m_Commands.put("broadcast", broadcast);
+    m_Commands.put("bc", broadcast);
   }
 
   @Override

@@ -1,6 +1,6 @@
 main: me.defaultybuf.chataddons.Main
 name: ChatAddons
-version: 1.7.0
+version: 1.8.0
 description: Multiple chat addons
 api-version: 1.19
 author: DefaultyBuf
@@ -24,6 +24,7 @@ permissions:
       chataddons.lockchat.*: true
       chataddons.staffchat: true
       chataddons.mention.*: true
+      chataddons.broadcast.*: true
 
   # -----------------------------------------------------------------
   chataddons.use:
@@ -96,4 +97,19 @@ permissions:
 
   chataddons.mention.notify:
     description: access to be notified
+    default: false
+
+  # -----------------------------------------------------------------
+  chataddons.broadcast.*:
+    default: false
+    children:
+      chataddons.broadcast: true
+      chataddons.broadcast.receive: true
+
+  chataddons.broadcast:
+    description: access to broadcast
+    default: false
+
+  chataddons.broadcast.receive:
+    description: access to receive broadcast messages
     default: false

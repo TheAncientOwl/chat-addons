@@ -12,6 +12,7 @@ public class Config {
   public static final String LOCK_CHAT = "lock-chat";
   public static final String STAFF_CHAT = "staff-chat";
   public static final String MENTION = "mention";
+  public static final String BROADCAST = "broadcast";
 
   private ConfigAccessor m_ConfigAccessor = null;
 
