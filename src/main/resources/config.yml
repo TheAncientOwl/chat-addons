@@ -2,7 +2,7 @@ messages:
   prefix: '&8(&3ChatAddons&8)&r '
   reload: '&aConfig reloaded&8!'
   unknown-command: '&cUnknown command&8.'
-  no-permission: "&You don't have the permission to use this command&8!"
+  no-permission: "&cYou don't have the permission to use this command&8!"
   help:
     - ''
     - '&8&m        &8« &3ChatAddons &eHelp &8»&m        '
