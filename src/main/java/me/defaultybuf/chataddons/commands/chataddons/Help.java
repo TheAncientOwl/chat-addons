@@ -6,10 +6,10 @@ import org.bukkit.command.CommandSender;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.commands.PluginCommand;
+import me.defaultybuf.chataddons.commands.BasePluginCommand;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 
-public class Help extends PluginCommand {
+public class Help extends BasePluginCommand {
 
   public Help(Main main, String permission) {
     super(main, permission);

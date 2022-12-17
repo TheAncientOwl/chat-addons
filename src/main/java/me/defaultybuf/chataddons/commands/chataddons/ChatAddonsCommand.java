@@ -8,11 +8,11 @@ import org.bukkit.command.CommandSender;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.commands.PluginCommand;
+import me.defaultybuf.chataddons.commands.BasePluginCommand;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 
 public class ChatAddonsCommand implements CommandExecutor {
-  private final HashMap<String, PluginCommand> m_Commands;
+  private final HashMap<String, BasePluginCommand> m_Commands;
 
   private Main m_Plugin;
 
@@ -46,7 +46,7 @@ public class ChatAddonsCommand implements CommandExecutor {
     if (args.length == 0)
       return true;
 
-    PluginCommand cmd = m_Commands.get(args[0].toLowerCase());
+    BasePluginCommand cmd = m_Commands.get(args[0].toLowerCase());
 
     if (cmd == null) {
       ChatUtils.sendMessage(sender, m_Plugin.getPluginConfig().getString(Config.MESSAGES, "unknown-command"));

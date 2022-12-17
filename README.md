@@ -5,3 +5,4 @@ Changelogs:
 - 1.3.0: code refactoring for further development
 - 1.4.0: clear chat
 - 1.5.0: lock chat
+- 1.5.1: code refactoring

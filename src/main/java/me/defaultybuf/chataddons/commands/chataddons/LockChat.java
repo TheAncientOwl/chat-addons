@@ -6,11 +6,11 @@ import org.bukkit.entity.Player;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.commands.PluginCommand;
+import me.defaultybuf.chataddons.commands.BasePluginCommand;
 import me.defaultybuf.chataddons.listeners.LockChatListener;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 
-public class LockChat extends PluginCommand {
+public class LockChat extends BasePluginCommand {
 
   public LockChat(Main main, String permission) {
     super(main, permission);

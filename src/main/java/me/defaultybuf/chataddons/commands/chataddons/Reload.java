@@ -4,10 +4,10 @@ import org.bukkit.command.CommandSender;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.commands.PluginCommand;
+import me.defaultybuf.chataddons.commands.BasePluginCommand;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 
-public class Reload extends PluginCommand {
+public class Reload extends BasePluginCommand {
 
   public Reload(Main main, String permsission) {
     super(main, permsission);
@@ -21,4 +21,5 @@ public class Reload extends PluginCommand {
 
     return true;
   }
+
 }
