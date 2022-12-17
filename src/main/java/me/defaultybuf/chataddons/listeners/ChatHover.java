@@ -1,4 +1,4 @@
-package me.defaultybuf.simplechatenhancement;
+package me.defaultybuf.chataddons.listeners;
 
 import java.util.List;
 
@@ -9,6 +9,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.clip.placeholderapi.PlaceholderAPI;
+import me.defaultybuf.chataddons.Config;
+import me.defaultybuf.chataddons.Main;
+import me.defaultybuf.chataddons.utils.ChatUtils;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
@@ -32,14 +35,14 @@ public class ChatHover implements Listener {
         TextComponent.fromLegacyText(e.getFormat().replace("%2$s", e.getMessage())));
 
     // create hover event
-    List<String> hoverLines = m_Plugin.getConfig().getStringList("chat-hover.format");
+    List<String> hoverLines = m_Plugin.getPluginConfig().getStringList(Config.CHAT_HOVER, "format");
     for (int i = 0; i < hoverLines.size(); i++)
       hoverLines.set(i, ChatUtils.setPlaceholdersColor(player, hoverLines.get(i)));
     final HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT,
         new Text(TextComponent.fromLegacyText(String.join("\n", hoverLines))));
 
     // create click event
-    final String clickAction = m_Plugin.getConfig().getString("chat-hover.click-action");
+    final String clickAction = m_Plugin.getPluginConfig().getString(Config.CHAT_HOVER, "click-action");
     final ClickEvent clickEvent = new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND,
         PlaceholderAPI.setPlaceholders(player, clickAction.substring(1, clickAction.length() - 1)));
 

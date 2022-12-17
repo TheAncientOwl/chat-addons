@@ -1,4 +1,4 @@
-package me.defaultybuf.simplechatenhancement;
+package me.defaultybuf.chataddons.utils;
 
 import java.io.File;
 import java.io.IOException;

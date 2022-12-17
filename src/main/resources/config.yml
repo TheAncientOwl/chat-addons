@@ -1,12 +1,30 @@
+messages:
+  prefix: '&8(&4&lChatAddons&8)&r'
+  reload: '&aConfig reloaded&8!'
+  unknown-command: '&cUnknown command&8.'
+  no-permission: "&c you don't have the permission to use this command&8!"
+  help:
+    - ''
+    - '&8&m        &8« &4ChatAddons &eHelp &8»&m        '
+    - '&8/&4help&8: &7displays this list'
+    - '&8/&4reload&8: &7reloads the plugin config'
+
 bracket-placeholders-injector:
   enabled: true
 
 chat-hover:
   enabled: true
   format:
-    - '&a%player_name%'
-    - '&7world: %player_world%'
+    - '%luckperms_meta_rank_tag% %luckperms_prefix%%essentials_nickname%'
+    - '&3✵ &#A7A2A2Balance&8: &2%vault_eco_balance_formatted%'
+    - '&3✵ &#A7A2A2Ping: &#B56802%player_ping%'
+    - '&3✵ &#A7A2A2XP&8: &#4295D8%player_level%'
     - ''
-    - '&7Click to send %player_name% a message!'
+    - '&8« &#12950bS&#13a10cl&#15ac0di&#16b80em&#18c40ee&#19d00ff&#1bdb10u&#1ce711n &8»'
+    - '&3✵ &#A7A2A2Title&8: &#B42745%slimefun_researches_title%'
+    - '&3✵ &#A7A2A2XP spent&8: &#4295D8%slimefun_researches_total_xp_levels_spent%'
+    - '&3✵ &#A7A2A2Researches&8: &#EF8903%slimefun_researches_total_researches_unlocked%&8/&#CE7603%slimefun_researches_total_researches% &8&o(&#FCFC54&o%slimefun_researches_percentage_researches_unlocked%%&8&o)'
+    - ''
+    - '&#A7A2A2&oClick to send %luckperms_prefix%&o%essentials_nickname% &#A7A2A2&oa message&8&o!'
   click-action:
-    - '/msg %player_name% '
+    - '/msg %essentials_nickname% '

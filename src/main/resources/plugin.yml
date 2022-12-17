@@ -1,15 +1,33 @@
-main: me.defaultybuf.simplechatenhancement.Main
-name: SimpleChatEnhancement
-version: 1.0
+main: me.defaultybuf.chataddons.Main
+name: ChatAddons
+version: 1.3.0
+description: Multiple chat addons
 api-version: 1.19
+author: DefaultyBuf
 softdepend: [PlaceholderAPI]
 
 commands:
-  sce:
-    description: reloads the plugin
-    permission: sce.reload
+  chataddons:
+    description: access to main command
+    aliases: ca
+    permission: chataddons.use
+    usage: 'Usage: /chataddons [reload]'
 
 permissions:
-  sce.reload:
-    description: allows sce command
-    default: op
+  chataddons.admin:
+    children:
+      chataddons.use: true
+      chataddons.reload: true
+      chataddons.help: true
+
+  chataddons.use:
+    description: permission to use main command
+    default: false
+
+  chataddons.reload:
+    description: permission to reload config
+    default: false
+
+  chataddons.help:
+    description: permission to use chataddons help command
+    default: false

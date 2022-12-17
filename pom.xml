@@ -4,8 +4,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>me.defaultybuf.simplechatenhancement</groupId>
-  <artifactId>SimpleChatEnhancement</artifactId>
+  <groupId>me.defaultybuf.chataddons</groupId>
+  <artifactId>ChatAddons</artifactId>
   <developers>
     <developer>
       <id>DefaultyBuf</id>
@@ -13,10 +13,10 @@
       <timezone>EST</timezone>
     </developer>
   </developers>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.3.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>SimpleChatEnhancement</name>
+  <name>ChatAddons</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

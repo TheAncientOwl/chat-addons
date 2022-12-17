@@ -1,11 +1,13 @@
-package me.defaultybuf.simplechatenhancement;
+package me.defaultybuf.chataddons.utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import me.clip.placeholderapi.PlaceholderAPI;
+import me.defaultybuf.chataddons.Config;
 import net.md_5.bungee.api.ChatColor;
 
 public class ChatUtils {
@@ -25,6 +27,18 @@ public class ChatUtils {
     }
 
     return str;
+  }
+
+  public static void sendMessage(Player player, String message) {
+    player.sendMessage(colorize(message));
+  }
+
+  public static void sendMessage(CommandSender sender, String message) {
+    sender.sendMessage(colorize(message));
+  }
+
+  public static void sendNoPermissionMessage(CommandSender sender, final Config config) {
+    sendMessage(sender, config.getPrefix() + config.getString(Config.CHAT_HOVER, "no-permission"));
   }
 
   public static String setBracketPlaceholdersColor(Player player, String str) {
