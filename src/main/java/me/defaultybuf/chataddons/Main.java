@@ -8,9 +8,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.defaultybuf.chataddons.commands.chataddons.ChatAddonsCommand;
 import me.defaultybuf.chataddons.listeners.BracketPlaceholdersInjector;
-import me.defaultybuf.chataddons.listeners.ChatHover;
+import me.defaultybuf.chataddons.listeners.ChatHoverListener;
 import me.defaultybuf.chataddons.listeners.LockChatListener;
-import me.defaultybuf.chataddons.listeners.StaffChat;
+import me.defaultybuf.chataddons.listeners.StaffChatListener;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 import net.md_5.bungee.api.ChatColor;
 
@@ -41,12 +41,12 @@ public class Main extends JavaPlugin {
                 pluginManager.registerEvents(new BracketPlaceholdersInjector(), this);
 
             if (m_Config.getBoolean(Config.CHAT_HOVER, "enabled"))
-                pluginManager.registerEvents(new ChatHover(this), this);
+                pluginManager.registerEvents(new ChatHoverListener(this), this);
         }
 
         pluginManager.registerEvents(new LockChatListener(m_Config), this);
 
-        pluginManager.registerEvents(new StaffChat(m_Config), this);
+        pluginManager.registerEvents(new StaffChatListener(m_Config), this);
     }
 
     public void registerCommands() {

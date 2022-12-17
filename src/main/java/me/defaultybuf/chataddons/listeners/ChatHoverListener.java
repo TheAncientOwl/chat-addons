@@ -19,10 +19,10 @@ import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.chat.hover.content.Text;
 
-public class ChatHover implements Listener {
+public class ChatHoverListener implements Listener {
   private final Main m_Plugin;
 
-  public ChatHover(Main plugin) {
+  public ChatHoverListener(Main plugin) {
     m_Plugin = plugin;
   }
 

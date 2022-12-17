@@ -12,11 +12,11 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 
-public class StaffChat implements Listener {
+public class StaffChatListener implements Listener {
   private HashSet<Player> m_Staff;
   private Config m_Config;
 
-  public StaffChat(Config config) {
+  public StaffChatListener(Config config) {
     m_Config = config;
     m_Staff = new HashSet<>();
   }
