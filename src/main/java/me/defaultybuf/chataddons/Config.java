@@ -11,6 +11,7 @@ public class Config {
   public static final String CLEAR_CHAT = "clear-chat";
   public static final String LOCK_CHAT = "lock-chat";
   public static final String STAFF_CHAT = "staff-chat";
+  public static final String MENTION = "mention";
 
   private ConfigAccessor m_ConfigAccessor = null;
 

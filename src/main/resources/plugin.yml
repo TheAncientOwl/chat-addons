@@ -1,6 +1,6 @@
 main: me.defaultybuf.chataddons.Main
 name: ChatAddons
-version: 1.6.0
+version: 1.7.0
 description: Multiple chat addons
 api-version: 1.19
 author: DefaultyBuf
@@ -23,6 +23,7 @@ permissions:
       chataddons.clearchat.*: true
       chataddons.lockchat.*: true
       chataddons.staffchat: true
+      chataddons.mention.*: true
 
   # -----------------------------------------------------------------
   chataddons.use:
@@ -80,4 +81,19 @@ permissions:
   # -----------------------------------------------------------------
   chataddons.staffchat:
     description: allows staffchat
+    default: false
+
+  # -----------------------------------------------------------------
+  chataddons.mention.*:
+    default: false
+    children:
+      chataddons.mention: true
+      chataddons.mention.notify: true
+
+  chataddons.mention:
+    description: access to mention system
+    default: false
+
+  chataddons.mention.notify:
+    description: access to be notified
     default: false

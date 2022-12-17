@@ -38,6 +38,7 @@ clear-chat:
   notify: '&7The chat was cleared by &4{name}&8!'
 
 lock-chat:
+  enabled: true
   deny: "&7You cannot type in the chat while it's locked&8."
   notify:
     locked: '&7The chat was locked by &4{name}&8!'
@@ -47,5 +48,13 @@ lock-chat:
     unlocked: '&7The chat is already unlocked&8!'
 
 staff-chat:
+  enabled: true
   char: '@'
   format: '&3Staff &8&l» &7{name}&8: &b{message}'
+
+mention:
+  enabled: true
+  format: '&9&oHey! &b&o{name} &b&omentioned your name in chat&8&o!'
+  sound: ENTITY_ARROW_HIT_PLAYER
+  volume: 10
+  pitch: 1

@@ -10,6 +10,7 @@ import me.defaultybuf.chataddons.commands.chataddons.ChatAddonsCommand;
 import me.defaultybuf.chataddons.listeners.BracketPlaceholdersInjector;
 import me.defaultybuf.chataddons.listeners.ChatHoverListener;
 import me.defaultybuf.chataddons.listeners.LockChatListener;
+import me.defaultybuf.chataddons.listeners.MentionListener;
 import me.defaultybuf.chataddons.listeners.StaffChatListener;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 import net.md_5.bungee.api.ChatColor;
@@ -44,9 +45,14 @@ public class Main extends JavaPlugin {
                 pluginManager.registerEvents(new ChatHoverListener(this), this);
         }
 
-        pluginManager.registerEvents(new LockChatListener(m_Config), this);
+        if (m_Config.getBoolean(Config.CLEAR_CHAT, "enabled"))
+            pluginManager.registerEvents(new LockChatListener(m_Config), this);
 
-        pluginManager.registerEvents(new StaffChatListener(m_Config), this);
+        if (m_Config.getBoolean(Config.STAFF_CHAT, "enabled"))
+            pluginManager.registerEvents(new StaffChatListener(m_Config), this);
+
+        if (m_Config.getBoolean(Config.MENTION, "enabled"))
+            pluginManager.registerEvents(new MentionListener(m_Config), this);
     }
 
     public void registerCommands() {

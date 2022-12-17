@@ -7,3 +7,4 @@ Changelogs:
 - 1.5.0: lock chat
 - 1.5.1: code refactoring
 - 1.6.0: staff chat
+- 1.7.0: mention notifier
