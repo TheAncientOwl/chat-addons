@@ -6,8 +6,9 @@ messages:
   help:
     - ''
     - '&8&m        &8« &4ChatAddons &eHelp &8»&m        '
-    - '&8/&4help&8: &7displays this list'
-    - '&8/&4reload&8: &7reloads the plugin config'
+    - '&8/&4ca &chelp&8: &7displays this list'
+    - '&8/&4ca &creload&8: &7reloads the plugin config'
+    - '&8/&4ca &cclearchat&8/&ccc&8: &7clears the chat'
 
 bracket-placeholders-injector:
   enabled: true
@@ -28,3 +29,7 @@ chat-hover:
     - '&#A7A2A2&oClick to send %luckperms_prefix%&o%essentials_nickname% &#A7A2A2&oa message&8&o!'
   click-action:
     - '/msg %essentials_nickname% '
+
+clear-chat:
+  amount: 150
+  notify: '&7The chat was cleared by &4{name}&8!'

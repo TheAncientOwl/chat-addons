@@ -1,6 +1,6 @@
 main: me.defaultybuf.chataddons.Main
 name: ChatAddons
-version: 1.3.0
+version: 1.4.0
 description: Multiple chat addons
 api-version: 1.19
 author: DefaultyBuf
@@ -19,15 +19,30 @@ permissions:
       chataddons.use: true
       chataddons.reload: true
       chataddons.help: true
+      chataddons.clearchat: true
+      chataddons.clearchat.bypass: true
+      chataddons.clearchat.notify: true
 
   chataddons.use:
-    description: permission to use main command
+    description: access to use main command
     default: false
 
   chataddons.reload:
-    description: permission to reload config
+    description: access to reload config
     default: false
 
   chataddons.help:
-    description: permission to use chataddons help command
+    description: access to use chataddons help command
+    default: false
+
+  chataddons.clearchat:
+    description: access to use clearchat command
+    default: false
+
+  chataddons.clearchat.bypass:
+    description: access to bypass the clear chat
+    default: false
+
+  chataddons.clearchat.notify:
+    description: notifies who cleared the chat
     default: false

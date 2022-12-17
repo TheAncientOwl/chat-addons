@@ -8,6 +8,7 @@ public class Config {
   public static final String PLACEHOLDERS_INJECTOR = "bracket-placeholders-injector";
   public static final String CHAT_HOVER = "chat-hover";
   public static final String MESSAGES = "messages";
+  public static final String CLEAR_CHAT = "clear-chat";
 
   private ConfigAccessor m_ConfigAccessor = null;
 
@@ -37,6 +38,10 @@ public class Config {
 
   public List<String> getStringList(final String sectionTag, final String path) {
     return m_ConfigAccessor.getConfig().getStringList(sectionTag + "." + path);
+  }
+
+  public int getInt(final String sectionTag, final String path) {
+    return m_ConfigAccessor.getConfig().getInt(sectionTag + "." + path);
   }
 
   public String getPrefix() {

@@ -22,6 +22,10 @@ public class ChatAddonsCommand implements CommandExecutor {
     m_Commands = new HashMap<>();
     m_Commands.put("reload", new Reload(main, "chataddons.reload"));
     m_Commands.put("help", new Help(main, "chataddons.help"));
+
+    ClearChat clearChat = new ClearChat(main, "chataddons.help");
+    m_Commands.put("clearchat", clearChat);
+    m_Commands.put("cc", clearChat);
   }
 
   @Override
