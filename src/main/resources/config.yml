@@ -62,3 +62,8 @@ mention:
 
 broadcast:
   format: '&4&lBroadcast &8&l» &e{message}'
+
+caps-extension:
+  enabled: true
+  caps-letters: 3
+  extension-letters: 5

@@ -9,3 +9,4 @@ Changelogs:
 - 1.6.0: staff chat
 - 1.7.0: mention notifier
 - 1.8.0: broadcast command
+- 1.9.0: caps-extension prevent

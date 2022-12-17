@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.defaultybuf.chataddons.commands.ChatAddonsCommand;
 import me.defaultybuf.chataddons.listeners.BracketPlaceholdersInjector;
+import me.defaultybuf.chataddons.listeners.CapsExtensionListener;
 import me.defaultybuf.chataddons.listeners.ChatHoverListener;
 import me.defaultybuf.chataddons.listeners.LockChatListener;
 import me.defaultybuf.chataddons.listeners.MentionListener;
@@ -53,6 +54,9 @@ public class Main extends JavaPlugin {
 
         if (m_Config.getBoolean(Config.MENTION, "enabled"))
             pluginManager.registerEvents(new MentionListener(m_Config), this);
+
+        if (m_Config.getBoolean(Config.CAPS_EXTENSION, "enabled"))
+            pluginManager.registerEvents(new CapsExtensionListener(m_Config), this);
     }
 
     public void registerCommands() {

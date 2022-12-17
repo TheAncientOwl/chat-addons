@@ -1,6 +1,6 @@
 main: me.defaultybuf.chataddons.Main
 name: ChatAddons
-version: 1.8.0
+version: 1.9.0
 description: Multiple chat addons
 api-version: 1.19
 author: DefaultyBuf
@@ -25,6 +25,7 @@ permissions:
       chataddons.staffchat: true
       chataddons.mention.*: true
       chataddons.broadcast.*: true
+      chataddons.caps-extension.bypass: true
 
   # -----------------------------------------------------------------
   chataddons.use:
@@ -112,4 +113,9 @@ permissions:
 
   chataddons.broadcast.receive:
     description: access to receive broadcast messages
+    default: false
+
+  # -----------------------------------------------------------------
+  chataddons.caps-extension.bypass:
+    description: bypasses caps-extension listener
     default: false
