@@ -11,8 +11,11 @@ import me.defaultybuf.chataddons.utils.ChatUtils;
 
 public class BracketPlaceholdersInjector implements Listener {
 
-  @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
+  @EventHandler(priority = EventPriority.HIGH)
   public void onChat(AsyncPlayerChatEvent e) {
+    if (e.isCancelled())
+      return;
+
     final Player player = e.getPlayer();
     final String message = e.getMessage();
     final String format = e.getFormat();

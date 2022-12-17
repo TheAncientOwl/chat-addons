@@ -4,3 +4,4 @@ Changelogs:
 - 1.2.0: chat hover
 - 1.3.0: code refactoring for further development
 - 1.4.0: clear chat
+- 1.5.0: lock chat

@@ -6,10 +6,10 @@ import org.bukkit.command.CommandSender;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.commands.BaseCommandExecutor;
+import me.defaultybuf.chataddons.commands.PluginCommand;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 
-public class Help extends BaseCommandExecutor {
+public class Help extends PluginCommand {
 
   public Help(Main main, String permission) {
     super(main, permission);
@@ -17,9 +17,6 @@ public class Help extends BaseCommandExecutor {
 
   @Override
   public boolean execute(CommandSender sender, String args[]) {
-    if (!super.hasPermission(sender))
-      return true;
-
     List<String> help = m_Config.getStringList(Config.MESSAGES, "help");
     for (String helpLine : help)
       ChatUtils.sendMessage(sender, helpLine);

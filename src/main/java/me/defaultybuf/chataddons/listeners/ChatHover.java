@@ -28,6 +28,9 @@ public class ChatHover implements Listener {
 
   @EventHandler(priority = EventPriority.HIGHEST)
   public void onChat(AsyncPlayerChatEvent e) {
+    if (e.isCancelled())
+      return;
+
     Player player = e.getPlayer();
 
     // create message component

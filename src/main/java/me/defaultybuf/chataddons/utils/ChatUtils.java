@@ -38,7 +38,7 @@ public class ChatUtils {
   }
 
   public static void sendNoPermissionMessage(CommandSender sender, final Config config) {
-    sendMessage(sender, config.getPrefix() + config.getString(Config.CHAT_HOVER, "no-permission"));
+    sendMessage(sender, config.getPrefix() + config.getString(Config.MESSAGES, "no-permission"));
   }
 
   public static String setBracketPlaceholdersColor(Player player, String str) {

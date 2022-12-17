@@ -9,6 +9,7 @@ public class Config {
   public static final String CHAT_HOVER = "chat-hover";
   public static final String MESSAGES = "messages";
   public static final String CLEAR_CHAT = "clear-chat";
+  public static final String LOCK_CHAT = "lock-chat";
 
   private ConfigAccessor m_ConfigAccessor = null;
 

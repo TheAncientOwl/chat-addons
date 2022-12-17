@@ -1,6 +1,6 @@
 main: me.defaultybuf.chataddons.Main
 name: ChatAddons
-version: 1.4.0
+version: 1.5.0
 description: Multiple chat addons
 api-version: 1.19
 author: DefaultyBuf
@@ -15,14 +15,15 @@ commands:
 
 permissions:
   chataddons.admin:
+    default: false
     children:
       chataddons.use: true
       chataddons.reload: true
       chataddons.help: true
-      chataddons.clearchat: true
-      chataddons.clearchat.bypass: true
-      chataddons.clearchat.notify: true
+      chataddons.clearchat.*: true
+      chataddons.lockchat.*: true
 
+  # -----------------------------------------------------------------
   chataddons.use:
     description: access to use main command
     default: false
@@ -35,6 +36,14 @@ permissions:
     description: access to use chataddons help command
     default: false
 
+  # -----------------------------------------------------------------
+  chataddons.clearchat.*:
+    default: false
+    children:
+      chataddons.clearchat: true
+      chataddons.clearchat.bypass: true
+      chataddons.clearchat.notify: true
+
   chataddons.clearchat:
     description: access to use clearchat command
     default: false
@@ -45,4 +54,24 @@ permissions:
 
   chataddons.clearchat.notify:
     description: notifies who cleared the chat
+    default: false
+
+  # -----------------------------------------------------------------
+  chataddons.lockchat.*:
+    default: false
+    children:
+      chataddons.lockchat: true
+      chataddons.lockchat.bypass: true
+      chataddons.lockchat.notify: true
+
+  chataddons.lockchat:
+    description: locks the chat
+    default: false
+
+  chataddons.lockchat.bypass:
+    description: bypasses the chat lock
+    default: false
+
+  chataddons.lockchat.notify:
+    description: notifies who locked the chat
     default: false

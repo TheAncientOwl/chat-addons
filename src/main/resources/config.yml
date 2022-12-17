@@ -1,14 +1,16 @@
 messages:
-  prefix: '&8(&4&lChatAddons&8)&r'
+  prefix: '&8(&4&lChatAddons&8)&r '
   reload: '&aConfig reloaded&8!'
   unknown-command: '&cUnknown command&8.'
-  no-permission: "&c you don't have the permission to use this command&8!"
+  no-permission: "&You don't have the permission to use this command&8!"
   help:
     - ''
     - '&8&m        &8« &4ChatAddons &eHelp &8»&m        '
     - '&8/&4ca &chelp&8: &7displays this list'
     - '&8/&4ca &creload&8: &7reloads the plugin config'
     - '&8/&4ca &cclearchat&8/&ccc&8: &7clears the chat'
+    - '&8/&4ca &clockchat&8/&clc&8: &7locks the chat'
+    - '&8/&4ca &cunlockchat&8/&cuc&8: &7cunlocks the chat'
 
 bracket-placeholders-injector:
   enabled: true
@@ -33,3 +35,12 @@ chat-hover:
 clear-chat:
   amount: 150
   notify: '&7The chat was cleared by &4{name}&8!'
+
+lock-chat:
+  deny: "&7You cannot type in the chat while it's locked&8."
+  notify:
+    locked: '&7The chat was locked by &4{name}&8!'
+    unlocked: '&7The chat was unlocked by &4{name}&8!'
+  already:
+    locked: '&7The chat is already locked&8!'
+    unlocked: '&7The chat is already unlocked&8!'

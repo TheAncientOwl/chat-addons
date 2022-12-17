@@ -8,11 +8,11 @@ import org.bukkit.command.CommandSender;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.commands.BaseCommandExecutor;
+import me.defaultybuf.chataddons.commands.PluginCommand;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 
 public class ChatAddonsCommand implements CommandExecutor {
-  private final HashMap<String, BaseCommandExecutor> m_Commands;
+  private final HashMap<String, PluginCommand> m_Commands;
 
   private Main m_Plugin;
 
@@ -23,9 +23,17 @@ public class ChatAddonsCommand implements CommandExecutor {
     m_Commands.put("reload", new Reload(main, "chataddons.reload"));
     m_Commands.put("help", new Help(main, "chataddons.help"));
 
-    ClearChat clearChat = new ClearChat(main, "chataddons.help");
+    final ClearChat clearChat = new ClearChat(main, "chataddons.help");
     m_Commands.put("clearchat", clearChat);
     m_Commands.put("cc", clearChat);
+
+    final LockChat lockChat = new LockChat(main, "chataddons.lockchat");
+    m_Commands.put("lockchat", lockChat);
+    m_Commands.put("lc", lockChat);
+
+    final UnlockChat unlockChat = new UnlockChat(main, "chataddons.lockchat");
+    m_Commands.put("unlockchat", unlockChat);
+    m_Commands.put("uc", unlockChat);
   }
 
   @Override
@@ -38,13 +46,13 @@ public class ChatAddonsCommand implements CommandExecutor {
     if (args.length == 0)
       return true;
 
-    BaseCommandExecutor cmd = m_Commands.get(args[0]);
+    PluginCommand cmd = m_Commands.get(args[0].toLowerCase());
 
     if (cmd == null) {
       ChatUtils.sendMessage(sender, m_Plugin.getPluginConfig().getString(Config.MESSAGES, "unknown-command"));
       return true;
     }
 
-    return cmd.execute(sender, args);
+    return cmd.onCommand(sender, command, label, args);
   }
 }

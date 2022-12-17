@@ -6,10 +6,10 @@ import org.bukkit.entity.Player;
 
 import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
-import me.defaultybuf.chataddons.commands.BaseCommandExecutor;
+import me.defaultybuf.chataddons.commands.PluginCommand;
 import me.defaultybuf.chataddons.utils.ChatUtils;
 
-public class ClearChat extends BaseCommandExecutor {
+public class ClearChat extends PluginCommand {
 
   public ClearChat(Main main, String permission) {
     super(main, permission);
@@ -17,9 +17,6 @@ public class ClearChat extends BaseCommandExecutor {
 
   @Override
   public boolean execute(CommandSender sender, String[] args) {
-    if (!super.hasPermission(sender))
-      return true;
-
     final int clearChatAmount = m_Config.getInt(Config.CLEAR_CHAT, "amount");
 
     for (Player player : Bukkit.getOnlinePlayers()) {
