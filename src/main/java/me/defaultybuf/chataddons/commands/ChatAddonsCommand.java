@@ -43,7 +43,9 @@ public class ChatAddonsCommand implements CommandExecutor {
   @Override
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     if (!sender.hasPermission("chataddons.use")) {
-      Utils.sendNoPermissionMessage(sender, m_Plugin.getPluginConfig());
+      sender.sendMessage(Utils
+          .color(m_Plugin.getPluginConfig().getPrefix()
+              + m_Plugin.getPluginConfig().getString(Config.MESSAGES, "no-permission")));
       return true;
     }
 
@@ -53,7 +55,7 @@ public class ChatAddonsCommand implements CommandExecutor {
     BasePluginCommand cmd = m_Commands.get(args[0].toLowerCase());
 
     if (cmd == null) {
-      Utils.sendMessageColor(sender, m_Plugin.getPluginConfig().getString(Config.MESSAGES, "unknown-command"));
+      sender.sendMessage(Utils.color(m_Plugin.getPluginConfig().getString(Config.MESSAGES, "unknown-command")));
       return true;
     }
 

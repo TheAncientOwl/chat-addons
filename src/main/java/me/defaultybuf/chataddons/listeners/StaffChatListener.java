@@ -54,7 +54,7 @@ public class StaffChatListener implements Listener {
         || !message.startsWith(m_Config.getString(Config.STAFF_CHAT, "char")))
       return;
 
-    final String staffMessage = Utils.colorize(m_Config.getString(Config.STAFF_CHAT, "format")
+    final String staffMessage = Utils.color(m_Config.getString(Config.STAFF_CHAT, "format")
         .replace("{name}", player.getDisplayName())
         .replace("{message}", message.substring(1, message.length())));
 

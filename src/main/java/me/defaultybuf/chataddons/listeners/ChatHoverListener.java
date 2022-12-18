@@ -40,7 +40,7 @@ public class ChatHoverListener implements Listener {
     // create hover event
     List<String> hoverLines = m_Plugin.getPluginConfig().getStringList(Config.CHAT_HOVER, "format");
     for (int i = 0; i < hoverLines.size(); i++)
-      hoverLines.set(i, Utils.setPlaceholdersColor(player, hoverLines.get(i)));
+      hoverLines.set(i, Utils.color(PlaceholderAPI.setPlaceholders(player, hoverLines.get(i))));
     final HoverEvent hoverEvent = new HoverEvent(HoverEvent.Action.SHOW_TEXT,
         new Text(TextComponent.fromLegacyText(String.join("\n", hoverLines))));
 

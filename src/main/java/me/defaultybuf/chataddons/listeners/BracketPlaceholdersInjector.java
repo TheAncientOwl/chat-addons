@@ -21,11 +21,11 @@ public class BracketPlaceholdersInjector implements Listener {
     final String format = e.getFormat();
 
     if (PlaceholderAPI.containsBracketPlaceholders(message)) {
-      e.setMessage(Utils.setBracketPlaceholdersColor(player, message));
+      e.setMessage(Utils.color(PlaceholderAPI.setBracketPlaceholders(player, message)));
     }
 
     if (PlaceholderAPI.containsBracketPlaceholders(format)) {
-      e.setFormat(Utils.setBracketPlaceholdersColor(player, format));
+      e.setFormat(Utils.color(PlaceholderAPI.setBracketPlaceholders(player, format)));
     }
   }
 }

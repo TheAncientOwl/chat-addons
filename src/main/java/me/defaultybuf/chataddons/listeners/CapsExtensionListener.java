@@ -1,11 +1,11 @@
 package me.defaultybuf.chataddons.listeners;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.defaultybuf.chataddons.Config;
-import me.defaultybuf.chataddons.utils.Utils;
 
 public class CapsExtensionListener implements Listener {
   private Config m_Config;
@@ -24,7 +24,7 @@ public class CapsExtensionListener implements Listener {
 
     StringBuilder newMessage = new StringBuilder();
     for (String word : e.getMessage().split(" ")) {
-      if (Utils.isPlayer(word)) {
+      if (Bukkit.getPlayerExact(word) != null) {
         newMessage.append(word).append(' ');
         continue;
       }

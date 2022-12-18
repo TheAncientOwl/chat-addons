@@ -13,7 +13,6 @@ import me.defaultybuf.chataddons.listeners.ChatHoverListener;
 import me.defaultybuf.chataddons.listeners.LockChatListener;
 import me.defaultybuf.chataddons.listeners.MentionListener;
 import me.defaultybuf.chataddons.listeners.StaffChatListener;
-import me.defaultybuf.chataddons.utils.Utils;
 import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin {
@@ -64,6 +63,6 @@ public class Main extends JavaPlugin {
     }
 
     public void announceEnabled() {
-        Bukkit.getServer().getLogger().log(Level.INFO, Utils.colorize(m_Config.getPrefix() + " &aenabled!"));
+        Bukkit.getServer().getLogger().log(Level.INFO, "ChatAddons enabled!");
     }
 }

@@ -19,16 +19,18 @@ public class LockChat extends BasePluginCommand {
   @Override
   public boolean execute(CommandSender sender, String[] args) {
     if (LockChatListener.isLocked()) {
-      Utils.sendMessageColor(sender, m_Config.getPrefix() + m_Config.getString(Config.LOCK_CHAT, "already.locked"));
+      sender.sendMessage(Utils.color(m_Config.getPrefix() + m_Config.getString(Config.LOCK_CHAT, "already.locked")));
       return true;
     }
 
     LockChatListener.lock();
 
-    final String notify = m_Config.getString(Config.LOCK_CHAT, "notify.locked").replace("{name}", sender.getName());
+    final String notification = Utils
+        .color(m_Config.getString(Config.LOCK_CHAT, "notify.locked").replace("{name}", sender.getName()));
+
     for (Player player : Bukkit.getOnlinePlayers())
       if (player.hasPermission("chataddons.lockchat.notify"))
-        Utils.sendMessageColor(player, notify);
+        player.sendMessage(notification);
 
     return true;
   }

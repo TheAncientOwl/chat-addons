@@ -10,3 +10,4 @@ Changelogs:
 - 1.7.0: mention notifier
 - 1.8.0: broadcast command
 - 1.9.0: caps-extension prevent
+- 1.9.1: code cleanup (Utils class)

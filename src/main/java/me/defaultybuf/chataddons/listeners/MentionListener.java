@@ -25,7 +25,7 @@ public class MentionListener implements Listener {
     if (!player.hasPermission("chataddons.mention"))
       return;
 
-    final String notification = Utils.colorize(m_Config.getString(Config.MENTION, "format").replace("{name}",
+    final String notification = Utils.color(m_Config.getString(Config.MENTION, "format").replace("{name}",
         player.getDisplayName()));
     final Sound sound = Sound.valueOf(m_Config.getString(Config.MENTION, "sound"));
     final int volume = m_Config.getInt(Config.MENTION, "volume");

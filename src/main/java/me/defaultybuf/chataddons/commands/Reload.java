@@ -17,7 +17,7 @@ public class Reload extends BasePluginCommand {
   public boolean execute(CommandSender sender, String args[]) {
     m_Config.reload();
 
-    Utils.sendMessageColor(sender, m_Config.getPrefix() + m_Config.getString(Config.MESSAGES, "reload"));
+    sender.sendMessage(Utils.color(m_Config.getPrefix() + m_Config.getString(Config.MESSAGES, "reload")));
 
     return true;
   }

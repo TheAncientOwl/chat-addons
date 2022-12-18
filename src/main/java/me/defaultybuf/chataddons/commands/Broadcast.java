@@ -24,7 +24,7 @@ public class Broadcast extends BasePluginCommand {
       sb.append(args[i]).append(' ');
 
     final String message = Utils
-        .colorize(m_Config.getString(Config.BROADCAST, "format").replace("{message}", sb.toString()));
+        .color(m_Config.getString(Config.BROADCAST, "format").replace("{message}", sb.toString()));
 
     Bukkit.broadcast(message, "chataddons.broadcast.receive");
 

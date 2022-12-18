@@ -19,13 +19,15 @@ public class ClearChat extends BasePluginCommand {
   public boolean execute(CommandSender sender, String[] args) {
     final int clearChatAmount = m_Config.getInt(Config.CLEAR_CHAT, "amount");
 
+    final String notification = Utils
+        .color(m_Config.getString(Config.CLEAR_CHAT, "notify").replace("{name}", sender.getName()));
+
     for (Player player : Bukkit.getOnlinePlayers()) {
       if (!player.hasPermission("chataddons.clearchat.bypass"))
         clearChat(player, clearChatAmount);
 
       if (player.hasPermission("chataddons.clearchat.notify"))
-        Utils.sendMessageColor(player,
-            m_Config.getString(Config.CLEAR_CHAT, "notify").replace("{name}", sender.getName()));
+        player.sendMessage(notification);
     }
 
     return true;
