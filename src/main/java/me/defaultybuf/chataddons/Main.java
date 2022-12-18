@@ -7,6 +7,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.defaultybuf.chataddons.commands.ChatAddonsCommand;
+import me.defaultybuf.chataddons.config.Config;
 import me.defaultybuf.chataddons.listeners.BracketPlaceholdersInjector;
 import me.defaultybuf.chataddons.listeners.CapsExtensionListener;
 import me.defaultybuf.chataddons.listeners.ChatHoverListener;

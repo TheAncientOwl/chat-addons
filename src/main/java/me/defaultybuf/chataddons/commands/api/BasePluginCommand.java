@@ -4,8 +4,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-import me.defaultybuf.chataddons.Config;
 import me.defaultybuf.chataddons.Main;
+import me.defaultybuf.chataddons.config.Config;
 import me.defaultybuf.chataddons.utils.Utils;
 
 public abstract class BasePluginCommand implements CommandExecutor, IPluginCommand {

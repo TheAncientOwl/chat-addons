@@ -1,4 +1,4 @@
-package me.defaultybuf.chataddons.utils;
+package me.defaultybuf.chataddons.config;
 
 import java.io.File;
 import java.io.IOException;

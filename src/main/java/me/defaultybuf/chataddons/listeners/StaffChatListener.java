@@ -9,7 +9,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import me.defaultybuf.chataddons.Config;
+import me.defaultybuf.chataddons.config.Config;
 import me.defaultybuf.chataddons.utils.Utils;
 
 public class StaffChatListener implements Listener {

@@ -1,8 +1,8 @@
-package me.defaultybuf.chataddons;
+package me.defaultybuf.chataddons.config;
 
 import java.util.List;
 
-import me.defaultybuf.chataddons.utils.ConfigAccessor;
+import me.defaultybuf.chataddons.Main;
 
 public class Config {
   public static final String PLACEHOLDERS_INJECTOR = "bracket-placeholders-injector";
