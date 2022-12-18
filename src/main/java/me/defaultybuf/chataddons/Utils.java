@@ -15,7 +15,7 @@ public class Utils {
   public static String colorRGB(String str) {
     Matcher matcher = RGB_PATTERN.matcher(str);
     while (matcher.find()) {
-      String color = str.substring(matcher.start() + 1, matcher.end());
+      final String color = str.substring(matcher.start() + 1, matcher.end());
       str = str.substring(0, matcher.start()) + ChatColor.of(color) +
           str.substring(matcher.end());
       matcher = RGB_PATTERN.matcher(str);
@@ -27,5 +27,4 @@ public class Utils {
   public static String color(String str) {
     return colorClassic(colorRGB(str));
   }
-
 }

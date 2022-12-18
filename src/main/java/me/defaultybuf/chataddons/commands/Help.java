@@ -16,7 +16,7 @@ public class Help extends BasePluginCommand {
 
   @Override
   public boolean execute(CommandSender sender, String args[]) {
-    List<String> help = m_Config.getStringList(Config.MESSAGES, "help");
+    final List<String> help = m_Config.getStringList(Config.MESSAGES, "help");
     for (String helpLine : help)
       sender.sendMessage(Utils.color(helpLine));
 

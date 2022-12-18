@@ -30,7 +30,7 @@ public class ChatHoverListener implements Listener {
     if (e.isCancelled())
       return;
 
-    Player player = e.getPlayer();
+    final Player player = e.getPlayer();
 
     // create message component
     final TextComponent messageText = new TextComponent(

@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
@@ -13,15 +14,15 @@ import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.config.Config;
 
 public class MentionListener implements Listener {
-  private Config m_Config;
+  private final Config m_Config;
 
   public MentionListener(Config config) {
     m_Config = config;
   }
 
-  @EventHandler
+  @EventHandler(priority = EventPriority.MONITOR)
   public void onChat(AsyncPlayerChatEvent e) {
-    Player player = e.getPlayer();
+    final Player player = e.getPlayer();
     if (!player.hasPermission("chataddons.mention"))
       return;
 
@@ -31,17 +32,22 @@ public class MentionListener implements Listener {
     final int volume = m_Config.getInt(Config.MENTION, "volume");
     final int pitch = m_Config.getInt(Config.MENTION, "pitch");
 
-    HashSet<Player> mentionedPlayers = new HashSet<>();
-    for (String word : e.getMessage().split(" ")) {
-      Player onlinePlayer = Bukkit.getPlayerExact(word);
-      if (onlinePlayer != null && onlinePlayer.hasPermission("chataddons.mention.notify"))
-        mentionedPlayers.add(player);
-    }
+    HashSet<Player> mentionedPlayers = extractPlayers(e.getMessage());
 
     for (Player mentionedPlayer : mentionedPlayers) {
       mentionedPlayer.sendMessage(notification);
       mentionedPlayer.playSound(mentionedPlayer.getLocation(), sound, volume, pitch);
     }
+  }
 
+  private static HashSet<Player> extractPlayers(String str) {
+    HashSet<Player> players = new HashSet<>();
+    for (String word : str.split(" ")) {
+      Player player = Bukkit.getPlayerExact(word);
+      if (player != null && player.hasPermission("chataddons.mention.notify"))
+        players.add(player);
+    }
+
+    return players;
   }
 }

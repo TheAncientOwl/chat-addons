@@ -18,7 +18,7 @@ public class Broadcast extends BasePluginCommand {
     if (args.length < 2)
       return true;
 
-    StringBuilder sb = new StringBuilder();
+    final StringBuilder sb = new StringBuilder();
     for (int i = 1; i < args.length; i++)
       sb.append(args[i]).append(' ');
 

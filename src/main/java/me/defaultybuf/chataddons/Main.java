@@ -28,10 +28,6 @@ public class Main extends JavaPlugin {
         announceEnabled();
     }
 
-    public Config getPluginConfig() {
-        return m_Config;
-    }
-
     public void registerListeners() {
         final PluginManager pluginManager = Bukkit.getServer().getPluginManager();
 

@@ -15,7 +15,7 @@ public class Config {
   public static final String BROADCAST = "broadcast";
   public static final String CAPS_EXTENSION = "caps-extension";
 
-  private ConfigAccessor m_ConfigAccessor = null;
+  private final ConfigAccessor m_ConfigAccessor;
 
   public Config(Main plugin) {
     m_ConfigAccessor = new ConfigAccessor(plugin, "config.yml");

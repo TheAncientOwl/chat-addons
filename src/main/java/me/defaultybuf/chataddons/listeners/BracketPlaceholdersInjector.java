@@ -2,7 +2,6 @@ package me.defaultybuf.chataddons.listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
@@ -11,11 +10,8 @@ import me.defaultybuf.chataddons.Utils;
 
 public class BracketPlaceholdersInjector implements Listener {
 
-  @EventHandler(priority = EventPriority.HIGH)
+  @EventHandler
   public void onChat(AsyncPlayerChatEvent e) {
-    if (e.isCancelled())
-      return;
-
     final Player player = e.getPlayer();
     final String message = e.getMessage();
     final String format = e.getFormat();

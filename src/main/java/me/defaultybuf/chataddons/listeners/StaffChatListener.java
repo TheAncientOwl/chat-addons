@@ -13,8 +13,8 @@ import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.config.Config;
 
 public class StaffChatListener implements Listener {
-  private HashSet<Player> m_Staff;
-  private Config m_Config;
+  private final HashSet<Player> m_Staff;
+  private final Config m_Config;
 
   public StaffChatListener(Config config) {
     m_Config = config;
@@ -23,29 +23,23 @@ public class StaffChatListener implements Listener {
 
   @EventHandler
   public void onJoin(PlayerJoinEvent e) {
-    Player player = e.getPlayer();
+    final Player player = e.getPlayer();
 
-    if (!player.hasPermission("chataddons.staffchat"))
-      return;
-
-    m_Staff.add(player);
+    if (player.hasPermission("chataddons.staffchat"))
+      m_Staff.add(player);
   }
 
   @EventHandler
   public void onQuit(PlayerQuitEvent e) {
-    Player player = e.getPlayer();
+    final Player player = e.getPlayer();
 
-    if (!player.hasPermission("chataddons.staffchat"))
-      return;
+    if (player.hasPermission("chataddons.staffchat") && m_Staff.contains(player))
+      m_Staff.remove(player);
 
-    m_Staff.remove(player);
   }
 
   @EventHandler
   public void onChat(AsyncPlayerChatEvent e) {
-    if (e.isCancelled())
-      return;
-
     final Player player = e.getPlayer();
 
     final String message = e.getMessage();

@@ -11,7 +11,7 @@ import me.defaultybuf.chataddons.config.Config;
 
 public class LockChatListener implements Listener {
   private static volatile boolean m_IsChatLocked;
-  private Config m_Config;
+  private final Config m_Config;
 
   public LockChatListener(Config config) {
     m_Config = config;
@@ -21,7 +21,7 @@ public class LockChatListener implements Listener {
 
   @EventHandler(priority = EventPriority.LOWEST)
   public void onChat(AsyncPlayerChatEvent e) {
-    Player player = e.getPlayer();
+    final Player player = e.getPlayer();
 
     if (m_IsChatLocked && !player.hasPermission("chataddons.lockchat.bypass")) {
       e.setCancelled(true);

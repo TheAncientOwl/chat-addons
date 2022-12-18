@@ -24,7 +24,7 @@ public class UnlockChat extends BasePluginCommand {
 
     LockChatListener.unlock();
 
-    String notification = Utils.color(
+    final String notification = Utils.color(
         m_Config.getString(Config.LOCK_CHAT, "notify.unlocked").replace("{name}", sender.getName()));
 
     for (Player player : Bukkit.getOnlinePlayers())

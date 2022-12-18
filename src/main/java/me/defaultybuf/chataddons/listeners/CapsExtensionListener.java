@@ -22,7 +22,7 @@ public class CapsExtensionListener implements Listener {
     final int extensionLimit = m_Config.getInt(Config.CAPS_EXTENSION, "extension-letters");
     final int capsLimit = m_Config.getInt(Config.CAPS_EXTENSION, "caps-letters");
 
-    StringBuilder newMessage = new StringBuilder();
+    final StringBuilder newMessage = new StringBuilder();
     for (String word : e.getMessage().split(" ")) {
       if (Bukkit.getPlayerExact(word) != null) {
         newMessage.append(word).append(' ');
