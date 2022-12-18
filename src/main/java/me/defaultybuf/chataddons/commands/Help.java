@@ -5,9 +5,9 @@ import java.util.List;
 import org.bukkit.command.CommandSender;
 
 import me.defaultybuf.chataddons.Main;
+import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.commands.api.BasePluginCommand;
 import me.defaultybuf.chataddons.config.Config;
-import me.defaultybuf.chataddons.utils.Utils;
 
 public class Help extends BasePluginCommand {
 

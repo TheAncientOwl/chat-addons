@@ -10,8 +10,8 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.defaultybuf.chataddons.Main;
+import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.config.Config;
-import me.defaultybuf.chataddons.utils.Utils;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;

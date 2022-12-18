@@ -7,9 +7,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import me.defaultybuf.chataddons.Main;
+import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.commands.api.BasePluginCommand;
 import me.defaultybuf.chataddons.config.Config;
-import me.defaultybuf.chataddons.utils.Utils;
 
 public class ChatAddonsCommand implements CommandExecutor {
   private final HashMap<String, BasePluginCommand> m_Commands;

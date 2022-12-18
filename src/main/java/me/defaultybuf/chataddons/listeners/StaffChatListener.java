@@ -9,8 +9,8 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.config.Config;
-import me.defaultybuf.chataddons.utils.Utils;
 
 public class StaffChatListener implements Listener {
   private HashSet<Player> m_Staff;

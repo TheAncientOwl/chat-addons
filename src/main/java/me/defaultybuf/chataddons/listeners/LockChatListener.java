@@ -6,8 +6,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.config.Config;
-import me.defaultybuf.chataddons.utils.Utils;
 
 public class LockChatListener implements Listener {
   private static volatile boolean m_IsChatLocked;

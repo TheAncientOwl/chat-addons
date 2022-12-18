@@ -1,4 +1,4 @@
-package me.defaultybuf.chataddons.utils;
+package me.defaultybuf.chataddons;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

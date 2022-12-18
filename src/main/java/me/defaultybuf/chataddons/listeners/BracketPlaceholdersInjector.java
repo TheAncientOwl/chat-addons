@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.clip.placeholderapi.PlaceholderAPI;
-import me.defaultybuf.chataddons.utils.Utils;
+import me.defaultybuf.chataddons.Utils;
 
 public class BracketPlaceholdersInjector implements Listener {
 
