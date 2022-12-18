@@ -8,7 +8,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import me.defaultybuf.chataddons.config.Config;
 
 public class CapsExtensionListener implements Listener {
-  private Config m_Config;
+  private final Config m_Config;
 
   public CapsExtensionListener(Config config) {
     m_Config = config;
@@ -22,41 +22,45 @@ public class CapsExtensionListener implements Listener {
     final int extensionLimit = m_Config.getInt(Config.CAPS_EXTENSION, "extension-letters");
     final int capsLimit = m_Config.getInt(Config.CAPS_EXTENSION, "caps-letters");
 
-    final StringBuilder newMessage = new StringBuilder();
-    for (String word : e.getMessage().split(" ")) {
+    final StringBuilder newMessageBuilder = new StringBuilder();
+
+    final String[] words = e.getMessage().split(" ");
+    for (String word : words) {
       if (Bukkit.getPlayerExact(word) != null) {
-        newMessage.append(word).append(' ');
+        newMessageBuilder.append(word).append(' ');
         continue;
       }
 
-      StringBuilder newWordBuilder = new StringBuilder();
+      final StringBuilder newWordBuilder = new StringBuilder();
 
-      char[] sNormal = word.toCharArray();
-      char[] sLower = word.toLowerCase().toCharArray();
-      int sz = sNormal.length;
-      int nrCaps = 0;
+      int capsCount = 0;
+      int seenCount = 0;
       char lastChar = '.';
-      int nra = 0;
-      for (int i = 0; i < sz; ++i) {
-        if ('A' <= sNormal[i] && sNormal[i] <= 'Z')
-          ++nrCaps;
+      for (int i = 0, length = word.length(); i < length; ++i) {
+        final char currentChar = word.charAt(i);
+        final char currentCharLower = Character.toLowerCase(currentChar);
 
-        if (sLower[i] != lastChar) {
-          nra = 1;
-          lastChar = sLower[i];
-        } else if (sLower[i] == lastChar) {
-          ++nra;
+        // count caps characters
+        if (Character.isUpperCase(currentChar))
+          ++capsCount;
+
+        // extension
+        if (currentCharLower != lastChar) {
+          seenCount = 1;
+          lastChar = currentCharLower;
+        } else if (currentCharLower == lastChar) {
+          ++seenCount;
         }
 
-        if (nra < extensionLimit)
-          newWordBuilder.append(sNormal[i]);
+        if (seenCount <= extensionLimit)
+          newWordBuilder.append(currentChar);
       }
 
-      String newWord = newWordBuilder.toString();
+      final String newWord = newWordBuilder.toString();
 
-      newMessage.append(nrCaps >= capsLimit ? newWord.toLowerCase() : newWord).append(' ');
+      newMessageBuilder.append(capsCount >= capsLimit ? newWord.toLowerCase() : newWord).append(' ');
     }
 
-    e.setMessage(newMessage.toString());
+    e.setMessage(newMessageBuilder.toString());
   }
 }
