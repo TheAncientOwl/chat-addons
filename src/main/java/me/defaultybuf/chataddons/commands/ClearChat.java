@@ -4,15 +4,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.defaultybuf.chataddons.Main;
 import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.commands.api.BasePluginCommand;
 import me.defaultybuf.chataddons.config.Config;
 
 public class ClearChat extends BasePluginCommand {
 
-  public ClearChat(Main main, String permission) {
-    super(main, permission);
+  public ClearChat(Config config, String permission) {
+    super(config, permission);
   }
 
   @Override

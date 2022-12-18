@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.defaultybuf.chataddons.Main;
 import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.commands.api.BasePluginCommand;
 import me.defaultybuf.chataddons.config.Config;
@@ -12,8 +11,8 @@ import me.defaultybuf.chataddons.listeners.LockChatListener;
 
 public class LockChat extends BasePluginCommand {
 
-  public LockChat(Main main, String permission) {
-    super(main, permission);
+  public LockChat(Config config, String permission) {
+    super(config, permission);
   }
 
   @Override

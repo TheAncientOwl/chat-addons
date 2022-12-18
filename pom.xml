@@ -13,7 +13,7 @@
       <timezone>EST</timezone>
     </developer>
   </developers>
-  <version>1.9.1</version>
+  <version>1.9.2</version>
   <packaging>jar</packaging>
 
   <name>ChatAddons</name>

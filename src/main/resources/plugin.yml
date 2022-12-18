@@ -1,6 +1,6 @@
 main: me.defaultybuf.chataddons.Main
 name: ChatAddons
-version: 1.9.1
+version: 1.9.2
 description: Multiple chat addons
 api-version: 1.19
 author: DefaultyBuf

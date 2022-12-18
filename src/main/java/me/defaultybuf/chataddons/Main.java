@@ -43,7 +43,7 @@ public class Main extends JavaPlugin {
                 pluginManager.registerEvents(new BracketPlaceholdersInjector(), this);
 
             if (m_Config.getBoolean(Config.CHAT_HOVER, "enabled"))
-                pluginManager.registerEvents(new ChatHoverListener(this), this);
+                pluginManager.registerEvents(new ChatHoverListener(m_Config), this);
         }
 
         if (m_Config.getBoolean(Config.CLEAR_CHAT, "enabled"))
@@ -60,7 +60,7 @@ public class Main extends JavaPlugin {
     }
 
     public void registerCommands() {
-        this.getCommand("chataddons").setExecutor(new ChatAddonsCommand(this));
+        this.getCommand("chataddons").setExecutor(new ChatAddonsCommand(m_Config));
     }
 
     public void announceEnabled() {

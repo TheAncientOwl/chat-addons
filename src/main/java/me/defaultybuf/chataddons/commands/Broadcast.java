@@ -3,15 +3,14 @@ package me.defaultybuf.chataddons.commands;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 
-import me.defaultybuf.chataddons.Main;
 import me.defaultybuf.chataddons.Utils;
 import me.defaultybuf.chataddons.commands.api.BasePluginCommand;
 import me.defaultybuf.chataddons.config.Config;
 
 public class Broadcast extends BasePluginCommand {
 
-  public Broadcast(Main main, String permission) {
-    super(main, permission);
+  public Broadcast(Config config, String permission) {
+    super(config, permission);
   }
 
   @Override
